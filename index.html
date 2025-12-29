@@ -1,0 +1,152 @@
+<div class="lg-wrap" role="main">
+  <div class="lg-hero" aria-label="Looking Glass hero">
+    <div class="lg-overlay"></div>
+
+    <div class="lg-content">
+      <div class="lg-brand">THE LOOKING GLASS</div>
+      <div class="lg-sub">A diagnostic mirror for systems that move faster than humans.</div>
+
+      <div class="lg-mirror">
+        <img src="IMAGE_URL_HERE" alt="Looking Glass mirror" />
+      </div>
+
+      <div class="lg-lines">
+        <p>If you cannot see it,</p>
+        <p>and you cannot feel it,</p>
+        <p>you will never stop it.</p>
+        <p class="lg-gap">Somewhere, a brake exists.</p>
+        <p><strong>Who do you think is going to use it?</strong></p>
+      </div>
+
+      <div class="lg-actions">
+        <button class="lg-btn" id="lgOpen">Ask the Mirror</button>
+        <button class="lg-btn lg-btn-ghost" id="lgAbout">How it works</button>
+      </div>
+
+      <div class="lg-foot">
+        Mirror → Observer → Analyst → Operator
+      </div>
+    </div>
+  </div>
+
+  <div class="lg-modal" id="lgModal" aria-hidden="true">
+    <div class="lg-modal-card" role="dialog" aria-modal="true" aria-labelledby="lgTitle">
+      <div class="lg-modal-head">
+        <div id="lgTitle">The Mirror</div>
+        <button class="lg-x" id="lgClose" aria-label="Close">×</button>
+      </div>
+
+      <div class="lg-modal-body">
+        <div class="lg-q">
+          <label for="lgInput">Place your question into the glass</label>
+          <input id="lgInput" type="text" placeholder="e.g., Who is accountable when the system acts in 10ms?" />
+        </div>
+
+        <div class="lg-reply" id="lgReply">
+          You seek the speed of the waterfall without the strength of the dam.
+          Where the hand cannot reach the brake, the machine is no longer a tool; it is a projectile.
+        </div>
+
+        <div class="lg-modal-actions">
+          <button class="lg-btn" id="lgShuffle">Turn the Mirror</button>
+          <button class="lg-btn lg-btn-ghost" id="lgExit">Step back</button>
+        </div>
+      </div>
+
+      <div class="lg-modal-note">
+        Free tier reflection only. No diagnostics. No exports. No claims.
+      </div>
+    </div>
+  </div>
+
+  <div class="lg-drawer" id="lgDrawer" aria-hidden="true">
+    <div class="lg-drawer-card">
+      <div class="lg-modal-head">
+        <div>How it works</div>
+        <button class="lg-x" id="lgCloseAbout" aria-label="Close">×</button>
+      </div>
+      <div class="lg-drawer-body">
+        <p><strong>Looking Glass</strong> is built to surface one question:</p>
+        <p><em>When systems operate faster than humans can intervene, what does accountability mean?</em></p>
+        <p>This site begins with the Mirror (curiosity). Deeper tiers add structure.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .lg-wrap{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .lg-hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;padding:48px 18px;background:#0b0b0f}
+  .lg-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(255,255,255,.06),transparent 55%),linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.75))}
+  .lg-content{position:relative;z-index:2;max-width:860px;width:100%;text-align:center;color:#f2f2f2}
+  .lg-brand{letter-spacing:.22em;font-weight:700;font-size:12px;opacity:.9}
+  .lg-sub{margin-top:10px;opacity:.85;font-size:15px}
+  .lg-mirror{margin:26px auto 18px;max-width:420px}
+  .lg-mirror img{width:100%;height:auto;border-radius:16px;box-shadow:0 18px 55px rgba(0,0,0,.55)}
+  .lg-lines{margin:12px auto 18px;max-width:540px;line-height:1.55}
+  .lg-lines p{margin:6px 0;font-size:18px}
+  .lg-gap{margin-top:14px}
+  .lg-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+  .lg-btn{appearance:none;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;padding:12px 16px;border-radius:12px;cursor:pointer}
+  .lg-btn:hover{background:rgba(255,255,255,.12)}
+  .lg-btn-ghost{background:transparent}
+  .lg-foot{margin-top:22px;opacity:.65;font-size:12px;letter-spacing:.12em}
+
+  .lg-modal,.lg-drawer{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);padding:18px;z-index:9999}
+  .lg-modal-card,.lg-drawer-card{width:min(720px,92vw);background:#0f1117;border:1px solid rgba(255,255,255,.14);border-radius:16px;overflow:hidden;box-shadow:0 22px 70px rgba(0,0,0,.65)}
+  .lg-modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.12);font-weight:700}
+  .lg-x{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;line-height:1}
+  .lg-modal-body{padding:16px}
+  .lg-q label{display:block;margin-bottom:8px;opacity:.85}
+  .lg-q input{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0b0c10;color:#fff}
+  .lg-reply{margin-top:14px;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);line-height:1.55}
+  .lg-modal-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;margin-top:14px}
+  .lg-modal-note{padding:12px 16px;border-top:1px solid rgba(255,255,255,.12);opacity:.7;font-size:12px}
+
+  .lg-drawer{align-items:flex-start;padding-top:10vh}
+  .lg-drawer-body{padding:16px;line-height:1.6;opacity:.9}
+</style>
+
+<script>
+  (function(){
+    const replies = [
+      "You seek the speed of the waterfall without the strength of the dam. Where the hand cannot reach the brake, the machine is no longer a tool; it is a projectile.",
+      "If the stop costs more than the go, the system is already in motion. Your ‘oversight’ becomes a story told after impact.",
+      "Where silence is treated as consent, accountability is theatre. The mirror only reflects the missing brake.",
+      "The question is not whether it is clever. The question is whether it can be halted without permission, delay, or ceremony."
+    ];
+
+    const modal = document.getElementById("lgModal");
+    const drawer = document.getElementById("lgDrawer");
+    const openBtn = document.getElementById("lgOpen");
+    const aboutBtn = document.getElementById("lgAbout");
+    const closeBtn = document.getElementById("lgClose");
+    const closeAbout = document.getElementById("lgCloseAbout");
+    const exitBtn = document.getElementById("lgExit");
+    const shuffleBtn = document.getElementById("lgShuffle");
+    const replyBox = document.getElementById("lgReply");
+
+    function openModal(){ modal.style.display="flex"; modal.setAttribute("aria-hidden","false"); }
+    function closeModal(){ modal.style.display="none"; modal.setAttribute("aria-hidden","true"); }
+    function openDrawer(){ drawer.style.display="flex"; drawer.setAttribute("aria-hidden","false"); }
+    function closeDrawer(){ drawer.style.display="none"; drawer.setAttribute("aria-hidden","true"); }
+
+    openBtn && openBtn.addEventListener("click", openModal);
+    aboutBtn && aboutBtn.addEventListener("click", openDrawer);
+    closeBtn && closeBtn.addEventListener("click", closeModal);
+    exitBtn && exitBtn.addEventListener("click", closeModal);
+    closeAbout && closeAbout.addEventListener("click", closeDrawer);
+
+    shuffleBtn && shuffleBtn.addEventListener("click", function(){
+      const pick = replies[Math.floor(Math.random()*replies.length)];
+      replyBox.textContent = pick;
+    });
+
+    modal && modal.addEventListener("click", function(e){
+      if(e.target === modal) closeModal();
+    });
+    drawer && drawer.addEventListener("click", function(e){
+      if(e.target === drawer) closeDrawer();
+    });
+  })();
+</script>
